@@ -5,12 +5,12 @@ This library allows you to quickly use Shippify API with NodeJS
 ---
 ## Usage
 ### Installing
-`npm install shippify-node -S`
+`npm install @move-lab/shippify-node -S`
 
 ### Initialize
 Initialize the library:
 ```javascript
-import shippify from 'shippify-node'
+import shippify from '@move-lab/shippify-node'
 
 shippify.initialize('api_key', 'api_secret')
 ```

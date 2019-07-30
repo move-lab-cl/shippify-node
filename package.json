@@ -1,7 +1,7 @@
 {
   "name": "@move-lab/shippify-node",
-  "version": "0.0.1",
-  "description": "Simple module for Shippify",
+  "version": "0.0.2",
+  "description": "This library allows you to quickly use Shippify API with NodeJS",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {

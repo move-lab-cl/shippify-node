@@ -1,5 +1,5 @@
 {
-  "name": "shippify-node",
+  "name": "@move-lab/shippify-node",
   "version": "0.0.1",
   "description": "Simple module for Shippify",
   "main": "index.js",
@@ -7,5 +7,22 @@
   "dependencies": {
     "axios": "^0.19.0",
     "lodash": "^4.17.15"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/move-lab/shippify-node.git"
+  },
+  "keywords": [
+    "shippify"
+  ],
+  "author": "pablo.barrales@movelab.cl",
+  "bugs": {
+    "url": "https://github.com/move-lab/shippify-node/issues"
+  },
+  "homepage": "https://github.com/move-lab/shippify-node#readme",
+  "private": false
 }

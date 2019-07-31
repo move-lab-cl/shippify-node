@@ -1,15 +1,25 @@
 {
   "name": "@move-lab/shippify-node",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This library allows you to quickly use Shippify API with NodeJS",
-  "main": "index.js",
+  "main": "lib/index.js",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.19.0",
     "lodash": "^4.17.15"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "scripts": {
+    "prepublish": "node_modules/babel-cli/bin/babel.js src --out-dir lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

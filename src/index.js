@@ -57,9 +57,9 @@ async function quotes (deliveries = [], date = new Date(), options = {}) {
     limit: null,
     timeslots: false
   }, options)
-  deliveries.map(delivery => {
-    if (delivery.pickup) {
-      delivery.pickup.date = date
+  deliveries = deliveries.map(delivery => {
+    if (delivery.pickup && date) {
+      delivery.pickup.date = (new Date(date)).getTime()
     }
     return delivery
   })

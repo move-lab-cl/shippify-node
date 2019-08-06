@@ -51,11 +51,17 @@ const request = {
 
 async function quotes (deliveries = [], date = new Date(), options = {}) {
   const opts = Object.assign({
-    date: date.getTime(),
+    // date: date.getTime(),
     express: false,
     flexible: true,
     limit: null,
     timeslots: false
+  }, options)
+  deliveries.map(delivery => {
+    if (delivery.pickup) {
+      delivery.pickup.date = date
+    }
+    return delivery
   })
   const quotesResponse = await request.post(endpoints['quotes'], Object.assign({
     deliveries

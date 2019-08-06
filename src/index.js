@@ -49,7 +49,7 @@ const request = {
   }
 }
 
-async function quotes (deliveries = [], date = new Date(), options = {}) {
+async function quotes (delivery = [], date = new Date(), options = {}) {
   const opts = Object.assign({
     // date: date.getTime(),
     express: false,
@@ -57,7 +57,7 @@ async function quotes (deliveries = [], date = new Date(), options = {}) {
     limit: null,
     timeslots: false
   }, options)
-  deliveries = deliveries.map(delivery => {
+  const deliveries = [].concat(delivery).map(delivery => {
     if (delivery.pickup && date) {
       delivery.pickup.date = (new Date(date)).getTime()
     }

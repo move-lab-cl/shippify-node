@@ -55,7 +55,7 @@ async function quotes (delivery = [], date = new Date(), options = {}) {
     express: false,
     flexible: false,
     limit: null,
-    timeslots: false
+    timeslots: true
   }, options)
   const deliveries = [].concat(delivery).map(delivery => {
     if (delivery.pickup && date) {

@@ -8,8 +8,7 @@ const flex = Symbol()
 export default class Quotes {
   constructor (payload) {
 
-    this[raw] = payload.slots
-    this[slots] = payload.slots
+    this[raw] = payload.raw
     this[express] = payload.express
     this[flex] = payload.flex
   }
@@ -36,10 +35,6 @@ export default class Quotes {
 
   get express () {
     return this[express]
-  }
-
-  get slots () {
-    return this[slots]
   }
 
   get flex () {

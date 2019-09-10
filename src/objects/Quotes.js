@@ -8,7 +8,7 @@ const flex = Symbol()
 export default class Quotes {
   constructor (payload) {
 
-    this[raw] = payload.raw
+    this[raw] = payload.quotes
     this[express] = payload.express
     this[flex] = payload.flex
   }

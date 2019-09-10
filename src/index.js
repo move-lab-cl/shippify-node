@@ -53,7 +53,7 @@ async function quotes (delivery = [], date = new Date(), options = {}) {
   const opts = Object.assign({
     // date: date.getTime(),
     express: false,
-    flexible: false,
+    flexible: true,
     limit: null,
     timeslots: true
   }, options)
@@ -71,7 +71,9 @@ async function quotes (delivery = [], date = new Date(), options = {}) {
 
 async function deliveries (deliveries, quoteId, metadata = {}, options = {}) {
   const deliveryRequest = Object.assign({
-    deliveries: Object.assign(deliveries, metadata),
+    deliveries: deliveries.map(delivery => {
+      return Object.assign(delivery, metadata)
+    }),
     quoteId
   }, options)
   const deliveryResponse = await request.post(endpoints['deliveries'], deliveryRequest)

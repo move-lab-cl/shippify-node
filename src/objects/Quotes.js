@@ -8,7 +8,8 @@ const flex = Symbol()
 export default class Quotes {
   constructor (payload) {
 
-    this[raw] = payload.quotes
+    this[raw] = payload.slots
+    this[slots] = payload.slots
     this[express] = payload.express
     this[flex] = payload.flex
   }
@@ -18,7 +19,7 @@ export default class Quotes {
   }
 
   get closest () {
-    return new Quote(this[express] || _.first(_.orderBy(this[raw], ['dropoffStartTime'], ['asc'])))
+    return new Quote(_.first(_.orderBy(this[raw], ['dropoffStartTime'], ['asc'])))
   }
 
   get furthest () {
@@ -35,6 +36,10 @@ export default class Quotes {
 
   get express () {
     return this[express]
+  }
+
+  get slots () {
+    return this[slots]
   }
 
   get flex () {
